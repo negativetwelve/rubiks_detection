@@ -32,3 +32,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'paperclip', '~> 2.3'
 gem 'jquery-rails'
+gem 'rmagick'
