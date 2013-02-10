@@ -38,7 +38,16 @@
 </script>
 
 <div id="cube_progress">
-  cube so far
+  <% photos = Cube.find(params[:cube_id]).photos %>
+  <% photos.each_with_index do |photo, index| %>
+    <% if index < 3 %>
+      <%= image_tag photo.image.url(:thumb), class: "photo_top" %>
+    <% else %>
+      <div class="spacer"></div>
+      <%= image_tag photo.image.url(:thumb), class: "photo_middle" %>
+      <div class="spacer"></div>
+    <% end %>
+  <% end %>
 </div>
 
 <%= form_for Photo.new, :html => {:style => "display: none;", :id => "photo_form"} do |f| %>

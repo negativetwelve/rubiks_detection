@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
     @photo.image = File.new(upload_path)
     @photo.save
 
-    redirect_to @photo
+    redirect_to new_photo_path(cube_id: @photo.cube_id)
   end
 
   def show

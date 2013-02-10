@@ -17,3 +17,13 @@
   height: 480px;
   float: left;
 }
+
+#cube_progress {
+  float: left;
+  width: 350px;
+}
+
+.spacer {
+  width: 100px;
+  display: inline-block;
+}
