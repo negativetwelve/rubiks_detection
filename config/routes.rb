@@ -3,9 +3,11 @@ WebcamApp::Application.routes.draw do
   resources :photos, :only => [:index, :show, :new, :create] do
     post 'upload', :on => :collection
   end
+
+  resources :cubes
   
-  root :to => redirect("/photos")
-  
+  #root :to => redirect("/photos")
+  root :to => 'cubes#new'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

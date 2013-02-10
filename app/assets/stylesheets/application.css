@@ -2,3 +2,18 @@
  *= require_self
  *= require_tree .
 */
+
+#center {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 190px;
+  left: 270px;
+  border: 1px solid red;
+}
+
+#webcam {
+  width: 640px;
+  height: 480px;
+  float: left;
+}

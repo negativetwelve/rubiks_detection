@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   def create
     @photo = Photo.new(params[:photo])
+    @photo.cube_id = params[:cube_id]
     @photo.image = File.new(upload_path)
     @photo.save
 

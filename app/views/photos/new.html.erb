@@ -1,3 +1,4 @@
+<div id="center"></div>
 <div id="webcam"></div>
 <script type="text/javascript">
     function onload_complete(msg) {
@@ -11,8 +12,7 @@
 
     function upload_complete(msg) {
         if (msg == 'ok') {
-            $('#new_photo').show();
-            $('#photo_description').focus();
+            $('#photo_form').show();
         } else {
             alert('An error occured');
             webcam.reset();
@@ -26,14 +26,23 @@
     webcam.set_hook('onLoad', 'onload_complete');
     webcam.set_hook('onComplete', 'upload_complete');
     $('#webcam').html(webcam.get_html(640, 480));
+    
+    $(function() {
+      $(document).keydown(function(event) {
+        if (event.keyCode == 32) {
+          console.log('space pressed');
+          webcam.snap();
+        }
+      });
+    });
 </script>
-<input type="button" value="Take picture" onclick="webcam.snap();"/>
 
-<%= form_for Photo.new, :html => {:style => "display: none;"} do |f| %>
-    <p>
-      <%= f.label :description %><br/>
-      <%= f.text_field :description %>
-    </p>
+<div id="cube_progress">
+  cube so far
+</div>
+
+<%= form_for Photo.new, :html => {:style => "display: none;", :id => "photo_form"} do |f| %>
+    <%= hidden_field_tag "cube_id", params[:cube_id] %>
     <p>
       <%= f.submit "Save the photo" %>
       or <%= link_to "Take another", new_photo_path %>

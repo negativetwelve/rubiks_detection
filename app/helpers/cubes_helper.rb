@@ -1,0 +1,2 @@
+module CubesHelper
+end
