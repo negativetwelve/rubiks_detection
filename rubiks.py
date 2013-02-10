@@ -159,12 +159,13 @@ def solve(cube):
 			queue.append((newCube, newPath))
 
 def main():
-	sides = [["green", "red", "orange", "green", "white", "red", "green", "yellow", "yellow"],
-	 ["white", "green", "red", "yellow", "green", "white", "red", "red", "red"],
-	 ["white", "blue", "blue", "orange", "yellow", "white", "white", "green", "green"],
-	 ["blue", "blue", "blue", "blue", "orange", "white", "red", "orange", "white"],
-	 ["yellow", "yellow", "orange", "yellow", "blue", "blue", "yellow", "white", "yellow"],
-	 ["orange", "red", "orange", "green", "red", "orange", "blue", "orange", "green"]
+	sides = [
+    [y, w, g, g, w, g, g, r, r],
+    [r, r, w, r, r, b, b, y, w],
+    [b, b, b, y, y, o, b, b, o],
+    [y, g, r, y, g, r, o, y, y],
+    [w, o, g, w, o, g, g, o, y],
+    [r, w, o, b, b, o, w, w, o]
 	]
 
 	cube = Cube(sides)
